@@ -25,7 +25,7 @@ def calculate_word_score(sentences):
 
 def calculate_sentence_score(sentences, word_score, stop_words):
     scores = []
-    for i, sentence in enumerate(sentences):
+    for sentence in sentences:
         if len(sentence) == 0:
             scores.append(0)
             continue
