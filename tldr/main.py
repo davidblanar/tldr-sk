@@ -3,7 +3,6 @@ import re
 import argparse
 import numpy as np
 
-# https://github.com/stopwords-iso/stopwords-sk
 REGEX = re.compile('[,.„“;/_()]')
 LANG_DATA = simplemma.load_data('sk')
 
