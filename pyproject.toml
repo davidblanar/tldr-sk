@@ -6,10 +6,14 @@ authors = ["davidblanar <david.blanar@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-nltk = "^3.7"
+simplemma = "^0.5.0"
+numpy = "^1.22.3"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+tldr = "tldr.main:main"
