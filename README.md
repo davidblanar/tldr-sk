@@ -1,6 +1,6 @@
 ## TLDR-SK
 
-Reduces provided article size by extracting the most important sentences.
+Reduces provided article (in Slovak) by extracting the most important sentences.
 Inspired by reddit's TLDR bot.
 
 #### Sources used:
