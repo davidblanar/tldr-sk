@@ -33,7 +33,7 @@ def calculate_sentence_score(sentences, word_score, stop_words):
         for word in sentence:
             if word not in stop_words:
                 score += word_score[word]
-        scores.append(score / len(sentence))
+        scores.append(score)
     return scores
 
 
@@ -53,12 +53,12 @@ def main():
         stop_words = set(f.read().splitlines())
 
     with open(file_path, 'r') as f:
-        sentences = f.read().split('.')
+        sentences = [item for item in f.read().split('.') if item.strip() != '']
         processed = [process_sentence(sentence) for sentence in sentences]
         word_score = calculate_word_score(processed)
         sentence_score = calculate_sentence_score(processed, word_score, stop_words)
         best_indices = np.argsort(sentence_score)[::-1][:n]
-        best_sentences = np.array(sentences)[best_indices]
+        best_sentences = np.array(sentences)[sorted(best_indices)]
         reduction = round((1 - count_words(best_sentences) / count_words(sentences)) * 100)
         print(f"TLDR: (reduced by {reduction}%)")
         print(". ".join(best_sentences))
